@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/The-Ryan-Mobley/cloudFront/issues"
   },
-  "homepage": "https://github.com/The-Ryan-Mobley/cloudFront#readme"
+  "homepage": "https://github.com/The-Ryan-Mobley/cloudFront#readme",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "env": "0.0.2",
+    "express": "^4.17.1",
+    "firebase": "^7.7.0"
+  }
 }
