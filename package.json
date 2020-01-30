@@ -21,6 +21,7 @@
     "concurrently": "^5.1.0",
     "env": "0.0.2",
     "express": "^4.17.1",
-    "firebase": "^7.7.0"
+    "firebase": "^7.7.0",
+    "firebase-admin": "^8.9.2"
   }
 }
