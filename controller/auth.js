@@ -6,3 +6,11 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
   // ...
 });
 */
+module.exports = {
+    newUser: (req, res) => {
+
+    },
+    login: (req, res) => {
+        
+    }
+}
