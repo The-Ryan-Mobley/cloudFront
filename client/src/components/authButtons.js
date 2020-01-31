@@ -25,6 +25,16 @@ const mapDispatchToProps = dispatch =>
 const AuthButtons = (props) => {
     return (
         <Grid>
+            {props.userData.userId ? 
+            (
+                <Button>Logout</Button>
+            ) : 
+            (
+                <Grid container direction="row" spacing={1}>
+                    <Button><Link to="/signup">Register</Link></Button>
+                    <Button><Link to="/login">Login</Link></Button>
+                </Grid>
+            )}
 
         </Grid>
     )
