@@ -8,9 +8,10 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
 */
 module.exports = {
     newUser: (req, res) => {
+        console.log(req.body)
 
     },
     login: (req, res) => {
-        
+
     }
 }

@@ -27,8 +27,12 @@ const mapDispatchToProps = dispatch =>
   );
 
 const Signup = (props) => {
-    onTextChange = (event) => {
+    const [errorMessage, setMessage] = useState("");
+    const onTextChange = (event) => {
         props.characterInputChange(event.target.name, event.target.value); 
+    }
+    const sendNewUserData = () => {
+
     }
     return (
         <Layout>
