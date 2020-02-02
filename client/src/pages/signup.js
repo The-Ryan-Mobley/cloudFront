@@ -14,7 +14,7 @@ import {userInputChange} from "../utils/redux/actions";
 
 const mapStateToProps = state => {
     return { 
-      userData: state.formManipulation.userData
+      userData: state.userManipulation.userData
      };
   };
 
@@ -29,7 +29,8 @@ const mapDispatchToProps = dispatch =>
 const Signup = (props) => {
     const [errorMessage, setMessage] = useState("");
     const onTextChange = (event) => {
-        props.characterInputChange(event.target.name, event.target.value); 
+        props.userInputChange(event.target.name, event.target.value);
+        console.log(props.userData);
     }
     const sendNewUserData = () => {
 
@@ -45,7 +46,7 @@ const Signup = (props) => {
                     label="User Name"
                     defaultValue=""
                     name="userName" 
-                    onChange={this.onTextChange}
+                    onChange={onTextChange}
                     fullWidth={true}
                    
                 />
@@ -54,7 +55,7 @@ const Signup = (props) => {
                     label="Password"
                     defaultValue=""
                     name="password" 
-                    onChange={this.onTextChange}
+                    onChange={onTextChange}
                     fullWidth={true}
                 />
                 <TextField
@@ -62,7 +63,7 @@ const Signup = (props) => {
                     label="Confirm Password"
                     defaultValue=""
                     name="confirmPassword" 
-                    onChange={this.onTextChange}
+                    onChange={onTextChange}
                     fullWidth={true}
                 />
 

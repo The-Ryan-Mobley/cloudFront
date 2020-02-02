@@ -10,7 +10,7 @@ import {userInputChange} from "../utils/redux/actions";
 
 const mapStateToProps = state => {
     return { 
-      userData: state.formManipulation.userData
+      userData: state.userManipulation.userData
      };
   };
 

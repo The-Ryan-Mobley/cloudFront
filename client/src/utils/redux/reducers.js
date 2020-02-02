@@ -24,6 +24,7 @@ const userManipulation = (state = userState, action) => {
         default:
             return state;
     }
+    return state;
 
 }
 
