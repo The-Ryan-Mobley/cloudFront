@@ -12,6 +12,8 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import {userInputChange} from "../utils/redux/actions";
 
+import api from "../utils/api";
+
 const mapStateToProps = state => {
     return { 
       userData: state.userManipulation.userData
@@ -32,7 +34,11 @@ const Signup = (props) => {
         props.userInputChange(event.target.name, event.target.value);
         console.log(props.userData);
     }
-    const sendNewUserData = () => {
+    const sendNewUserData = async () => {
+        const result = await api.newUser(props.userData);
+        if(result){
+            console.log("yo");
+        }
 
     }
     return (
@@ -46,6 +52,15 @@ const Signup = (props) => {
                     label="User Name"
                     defaultValue=""
                     name="userName" 
+                    onChange={onTextChange}
+                    fullWidth={true}
+                   
+                />
+                <TextField
+                    id="Email"
+                    label="Email"
+                    defaultValue=""
+                    name="email" 
                     onChange={onTextChange}
                     fullWidth={true}
                    
@@ -66,6 +81,7 @@ const Signup = (props) => {
                     onChange={onTextChange}
                     fullWidth={true}
                 />
+                <Button variant="contained" onClick={sendNewUserData}>Submit</Button>
 
             </Grid>
         </Layout>

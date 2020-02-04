@@ -5,8 +5,8 @@ const userState = {
     userData: {
         userName: "",
         password: "",
+        email: "",
         confirmPassword: "",
-        userThumbnail: "",
         userId: "",
     }
 }
