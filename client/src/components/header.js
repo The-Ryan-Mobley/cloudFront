@@ -11,6 +11,8 @@ const Header = ({ siteTitle }) => (
     style={{
       background: `#dbfeff`,
       marginBottom: `1.45rem`,
+      boxShadow: "10px 10px 14px -10px #000000",
+      fontFamily: "'Roboto Condensed', sans-serif"
     }}
   >
     <div

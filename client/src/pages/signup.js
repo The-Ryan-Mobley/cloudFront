@@ -14,6 +14,7 @@ import { connect } from "react-redux";
 import {userInputChange} from "../utils/redux/actions";
 
 import api from "../utils/api";
+import "../components/style.css";
 
 const mapStateToProps = state => {
     return { 
