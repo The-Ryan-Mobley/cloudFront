@@ -2,12 +2,14 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
+import Grid from '@material-ui/core/Grid';
+
 import AuthButtons from "./authButtons";
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `#dbfeff`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -29,7 +31,10 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      <Grid container direction="row-reverse">
       <AuthButtons/>
+      </Grid>
+      
     </div>
   </header>
 )

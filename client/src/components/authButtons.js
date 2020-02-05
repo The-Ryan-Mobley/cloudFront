@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import {HeaderButton} from "./styledComponents";
 
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -30,9 +31,13 @@ const AuthButtons = (props) => {
                 <Button>Logout</Button>
             ) : 
             (
-                <Grid container direction="row" spacing={1}>
-                    <Button><Link to="/signup">Register</Link></Button>
-                    <Button><Link to="/login">Login</Link></Button>
+                <Grid container direction="row" spacing={3}>
+                    <Grid item>
+                        <HeaderButton variant="contained"><Link to="/signup">Register</Link></HeaderButton>
+                    </Grid>
+                    <Grid item>
+                        <HeaderButton variant="contained"><Link to="/login">Login</Link></HeaderButton>
+                    </Grid>
                 </Grid>
             )}
 

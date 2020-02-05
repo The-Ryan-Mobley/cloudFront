@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react"
 import { Link } from "gatsby";
+import { navigate } from '@reach/router';
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -30,14 +31,19 @@ const mapDispatchToProps = dispatch =>
 
 const Signup = (props) => {
     const [errorMessage, setMessage] = useState("");
+    const [canSendUserData, setFlag] = useState(false);
     const onTextChange = (event) => {
         props.userInputChange(event.target.name, event.target.value);
+        if(props.userData.password === props.userData.confirmPassword){
+            setFlag(true);
+        }
         console.log(props.userData);
     }
     const sendNewUserData = async () => {
         const result = await api.newUser(props.userData);
         if(result){
             console.log("yo");
+            navigate("/index");
         }
 
     }
@@ -81,7 +87,11 @@ const Signup = (props) => {
                     onChange={onTextChange}
                     fullWidth={true}
                 />
-                <Button variant="contained" onClick={sendNewUserData}>Submit</Button>
+                <Button 
+                variant="contained" 
+                onClick={sendNewUserData}
+                disabled={!props.userData.userName.length && !canSendUserData}
+                >Submit</Button>
 
             </Grid>
         </Layout>
