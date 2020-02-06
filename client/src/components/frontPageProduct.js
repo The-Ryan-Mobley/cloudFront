@@ -5,6 +5,8 @@ import Button from '@material-ui/core/Button';
 
 import Grid from '@material-ui/core/Grid';
 
+import {FrontPageProductGrid} from "./styledComponents";
+
 export default function FrontPageProduct (props) {
     const [currentPrice, setPrice] = useState(0.00);
     useEffect(()=>{
@@ -14,7 +16,7 @@ export default function FrontPageProduct (props) {
         }
     },[])
     return (
-        <Grid container>
+        <FrontPageProductGrid container>
             <Grid item container xs={12} direction="column" justify="center" alignItems="center">
                 <h2>{props.productData.productName}</h2>
                 <h1 className="placeholder">IMAGES WILL GO HERE</h1>
@@ -31,6 +33,6 @@ export default function FrontPageProduct (props) {
             </Grid>
 
 
-        </Grid>
+        </FrontPageProductGrid>
     )
 }

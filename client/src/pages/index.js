@@ -40,7 +40,7 @@ const IndexPage = () => {
       <Grid container>
         <SEO title="Home" />
         <h1>CLOUDFRONT</h1>
-        <Grid container direction="row">
+        <Grid container direction="row" spacing={2}>
           {dailyDealProducts.map(item => (
             <Grid item xs={4}>
               <FrontPageProduct key={item.id} productData={item}/>
