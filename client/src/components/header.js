@@ -2,10 +2,27 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import {userInputChange} from "../utils/redux/actions";
+
 import Grid from '@material-ui/core/Grid';
 
 import AuthButtons from "./authButtons";
 
+const mapStateToProps = state => {
+  return { 
+    userData: state.userManipulation.userData
+   };
+};
+
+const mapDispatchToProps = dispatch =>
+bindActionCreators(
+  {
+    userInputChange
+  },
+  dispatch
+);
 const Header = ({ siteTitle }) => (
   <header
     style={{
@@ -49,4 +66,7 @@ Header.defaultProps = {
   siteTitle: ``,
 }
 
-export default Header
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(<i class="fa fa-header" aria-hidden="true"></i>);
