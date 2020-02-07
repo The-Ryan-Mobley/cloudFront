@@ -31,6 +31,21 @@ module.exports = {
 
     },
     login: (req, res) => {
+        const user = {
+            displayName: req.body.userData.userName,
+            email: req.body.userData.email,
+            password: req.body.userData.password
+        }
+        console.log(user);
+        firebase.auth().signInWithEmailAndPassword(email, password).then((result)=>{
+            res.json(result)
 
+        }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            res.sendStatus("504");
+            // ...
+          });
     }
 }
