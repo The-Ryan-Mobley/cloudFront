@@ -11,7 +11,7 @@ import TextField from '@material-ui/core/TextField';
 
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import {userInputChange} from "../utils/redux/actions";
+import {userInputChange, userAuthenticatedLoginData} from "../utils/redux/actions";
 
 import api from "../utils/api";
 import "../components/style.css";
@@ -25,7 +25,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      userInputChange
+      userInputChange,
+      userAuthenticatedLoginData
     },
     dispatch
   );
@@ -36,7 +37,8 @@ const Login = (props) => {
     const result = await api.loginUser(props.userData);
     if(result){
       console.log(result);
-      //window.location.replace("/");
+      props.userAuthenticatedLoginData(result.data.displayName);
+      setRedirect(true);
     } else {
       setError("Invalid Username of Password");
     }
@@ -75,7 +77,7 @@ const Login = (props) => {
               disabled={!props.userData.userName.length && !props.userData.password.length}
             >Submit</Button>
             <p>{errorMessage}</p>
-            {canRedirectOnSuccess ? (<Redirect to="/index"/>) : (<p></p>)}
+            {canRedirectOnSuccess ? (<Redirect noThrow to="/"/>) : (<p></p>)}
         </Layout>
     )
 }

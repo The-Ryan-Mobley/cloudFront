@@ -23,7 +23,8 @@ bindActionCreators(
   },
   dispatch
 );
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle}) => (
+  
   <header
     style={{
       background: `#dbfeff`,

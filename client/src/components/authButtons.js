@@ -26,6 +26,7 @@ const mapDispatchToProps = dispatch =>
 const AuthButtons = (props) => {
     return (
         <Grid>
+          <p>{props.userData.userName}</p>
             {props.userData.userId ? 
             (
                 <Button>Logout</Button>

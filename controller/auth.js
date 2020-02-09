@@ -41,6 +41,25 @@ module.exports = {
         console.log(user);
         firebase.auth().getUserByEmail(user.email).then((result)=> {
             console.log(result);
+            console.log(result.providerData[0].providerId);
+            if(result.providerData[0].providerId === user.password){
+                firebase.auth().createCustomToken(result.uid)
+                  .then(function(customToken) {
+                    const validatedUser = {
+                        displayName: result.providerData[0].displayName,
+                        email: user.email,
+                        customToken
+                    }
+                    res.json(validatedUser);
+                })
+                .catch(function(error) {
+                    console.log('Error creating custom token:', error);
+                    res.sendStatus("504");
+                });
+
+            } else {
+                res.sendStatus("504");
+            }
         })
         // //getUserByEmail
         // firebase.auth().authWithPassword(user.email, user.password).then((result)=>{
