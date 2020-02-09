@@ -35,7 +35,8 @@ const Login = (props) => {
   const userLoginCall = async () => {
     const result = await api.loginUser(props.userData);
     if(result){
-      window.location.replace("/");
+      console.log(result);
+      //window.location.replace("/");
     } else {
       setError("Invalid Username of Password");
     }

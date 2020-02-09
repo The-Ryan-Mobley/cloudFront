@@ -32,21 +32,31 @@ module.exports = {
 
     },
     login: (req, res) => {
+        console.log("called it");
         const user = {
             displayName: req.body.userData.userName,
             email: req.body.userData.email,
             password: req.body.userData.password
         }
         console.log(user);
-        firebase.auth().signInWithEmailAndPassword(email, password).then((result)=>{
-            res.json(result)
+        firebase.auth().getUserByEmail(user.email).then((result)=> {
+            console.log(result);
+        })
+        // //getUserByEmail
+        // firebase.auth().authWithPassword(user.email, user.password).then((result)=>{
+        //     console.log("yoooooo");
+        //     res.json(result)
 
-        }).catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            res.sendStatus("504");
-            // ...
-          });
+        // }).catch(function(error) {
+        //     // Handle Errors here.
+        //     var errorCode = error.code;
+        //     var errorMessage = error.message;
+        //     console.log(errorMessage);
+        //     res.sendStatus("504");
+        //     // ...
+        //   });
+    },
+    signOut: (req, res) => {
+
     }
 }

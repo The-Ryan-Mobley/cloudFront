@@ -5,6 +5,7 @@ export default {
         return axios.post("/api/users/new", {userData: userData});
     },
     loginUser: (userData) => {
+        console.table(userData);
         return axios.put("/api/users/login", {userData: userData});
     }
 }
