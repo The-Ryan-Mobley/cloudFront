@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react"
 import { Link } from "gatsby";
-import { navigate } from '@reach/router';
+import { Router, Location, Redirect } from "@reach/router"
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -30,6 +30,20 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 const Login = (props) => {
+  const [errorMessage, setError] = useState("");
+  const [canRedirectOnSuccess, setRedirect] = useState(false);
+  const userLoginCall = async () => {
+    const result = await api.loginUser(props.userData);
+    if(result){
+      window.location.replace("/");
+    } else {
+      setError("Invalid Username of Password");
+    }
+  }
+  const onTextChange = (event) => {
+    props.userInputChange(event.target.name, event.target.value);
+  }
+
     return (
         <Layout>
             <Grid container direction="row" justify="center" alignItems="center">
@@ -54,6 +68,13 @@ const Login = (props) => {
                     fullWidth={true}
                 />
             </Grid>
+            <Button 
+              variant="contained" 
+              onClick={userLoginCall}
+              disabled={!props.userData.userName.length && !props.userData.password.length}
+            >Submit</Button>
+            <p>{errorMessage}</p>
+            {canRedirectOnSuccess ? (<Redirect to="/index"/>) : (<p></p>)}
         </Layout>
     )
 }

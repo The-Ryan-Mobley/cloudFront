@@ -69,4 +69,4 @@ Header.defaultProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(<i class="fa fa-header" aria-hidden="true"></i>);
+)(Header);

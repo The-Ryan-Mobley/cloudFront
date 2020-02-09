@@ -19,13 +19,14 @@ module.exports = {
         .then((re)=>{
             console.log(re);
             console.log("eyyy");
-            res.json(result);
+            res.json(re);
         })
         .catch(function(error) {
             // Handle Errors here.
             res.sendStatus("504");
             var errorCode = error.code;
             var errorMessage = error.message;
+            console.log(errorMessage)
             // ...
           });
 

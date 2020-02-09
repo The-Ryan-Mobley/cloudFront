@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react"
 import { Link } from "gatsby";
-import { navigate } from '@reach/router';
+import { navigate, Redirect, redirectTo } from '@reach/router';
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -33,6 +33,7 @@ const mapDispatchToProps = dispatch =>
 const Signup = (props) => {
     const [errorMessage, setMessage] = useState("");
     const [canSendUserData, setFlag] = useState(false);
+    const [canRedirectOnSuccess, setRedirect] = useState(false);
     const onTextChange = (event) => {
         props.userInputChange(event.target.name, event.target.value);
         if(props.userData.password === props.userData.confirmPassword){
@@ -44,12 +45,16 @@ const Signup = (props) => {
         const result = await api.newUser(props.userData);
         if(result){
             console.log("yo");
-            navigate("/index");
-        }
+            //setRedirect(true);
+            window.location.replace("/");
+        } else {
+            setMessage("Invalid Username of Password");
+          }
 
     }
     return (
         <Layout>
+
             <Grid container direction="column" justify="center" alignItems="center">
                 <Grid item container xs={12} justify="center" alignItems="center">
                     <h1>Sign Up!</h1>
@@ -95,6 +100,8 @@ const Signup = (props) => {
                 >Submit</Button>
 
             </Grid>
+            <p>{errorMessage}</p>
+            {/* {canRedirectOnSuccess ? (<Redirect to="/" {...props}/>) : (<p></p>)} */}
         </Layout>
     )
 
