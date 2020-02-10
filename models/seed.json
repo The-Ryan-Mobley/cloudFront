@@ -1,0 +1,66 @@
+[
+    {
+        "id":0,
+        "productName": "'The Topps' Premium Top Hat",
+        "productImageUrl": "https://drive.google.com/file/d/1QCROKiwd6gXZr7d_1WtISC5EpQ1d1bKu/view?usp=sharing",
+        "vendorName": "Dapper Co",
+        "productPrice": 29.99,
+        "salePercent": 10,
+        "inventoryQuantity": 25
+    },
+    {
+        "id":1,
+        "productName": "Plastic Globe",
+        "productImageUrl": "https://drive.google.com/file/d/1RWs5eusTw5Fjp-udCYmhSzK3pMTVN9B4/view?usp=sharing",
+        "vendorName": "Eduterials",
+        "productPrice": 9.99,
+        "salePercent": 15,
+        "inventoryQuantity": 44
+    },
+    {
+        "id":2,
+        "productName": "Gold Pinelampple",
+        "productImageUrl": "https://drive.google.com/file/d/1gnu08XdXRS0nWH5jVTSC5B1fxkxrpYxs/view?usp=sharing",
+        "vendorName": "The Goods Houseware Co",
+        "productPrice": 59.99,
+        "salePercent": 10,
+        "inventoryQuantity": 115
+    },
+    {
+        "id":3,
+        "productName": "Moon Salt Lamp",
+        "productImageUrl": "https://drive.google.com/file/d/1iZ-GPboWShntUUnckTL91oJ6QLAL6FhZ/view?usp=sharing",
+        "vendorName": "The Goods Houseware Co",
+        "productPrice": 14.99,
+        "salePercent": 25,
+        "inventoryQuantity": 85
+    },
+    {
+        "id":4,
+        "productName": "Rustic Wood Table",
+        "productImageUrl": "https://drive.google.com/file/d/1SLWIrMSrtRzpPeID_LI1qZpV4G6bxijm/view?usp=sharing",
+        "vendorName": "Hipstairs Inc",
+        "productPrice": 249.99,
+        "salePercent": 40,
+        "inventoryQuantity": 221
+    },
+    {
+        "id":5,
+        "productName": "LoungeMaster 2000",
+        "productImageUrl": "https://drive.google.com/file/d/1DttCkKjKZcFFHn2MwhHMx6FrzFgqCxTU/view?usp=sharing",
+        "vendorName": "Hipstairs Inc",
+        "productPrice": 149.99,
+        "salePercent": 13,
+        "inventoryQuantity": 137
+    },
+    {
+        "id":6,
+        "productName": "Wooden Chess Set",
+        "productImageUrl": "https://drive.google.com/file/d/1pyQ9DV861FpqhzgrmFMUP7KC0xMv-dqV/view?usp=sharing",
+        "vendorName": "Ye Olde Games",
+        "productPrice": 29.99,
+        "salePercent": 34,
+        "inventoryQuantity": 405
+    }
+    
+]

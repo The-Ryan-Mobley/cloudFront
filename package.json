@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/The-Ryan-Mobley/cloudFront#readme",
   "dependencies": {
+    "@firebase/database": "^0.5.21",
     "concurrently": "^5.1.0",
     "env": "0.0.2",
     "express": "^4.17.1",
