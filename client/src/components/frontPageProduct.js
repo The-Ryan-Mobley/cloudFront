@@ -19,7 +19,7 @@ export default function FrontPageProduct (props) {
         <FrontPageProductGrid container>
             <Grid item container xs={12} direction="column" justify="center" alignItems="center">
                 <h2>{props.productData.productName}</h2>
-                <h1 className="placeholder">IMAGES WILL GO HERE</h1>
+                <img className="thumbIcon" src={props.productData.productImageUrl} alt="image"/>
             </Grid>
             <Grid item xs={12}>
                 <p>product by: {props.productData.vendorName}</p>

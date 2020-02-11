@@ -7,34 +7,16 @@ import SEO from "../components/seo"
 import "../components/style.css";
 
 import FrontPageProduct from "../components/frontPageProduct";
+import api from "../utils/api";
 
 const IndexPage = () => {
-  const [dailyDealProducts, setDailyDealProducts] = useState([
-    {
-      id:0,
-      productName: "Widget",
-      vendorName: "Widge Co",
-      productPrice: 19.99,
-      salePercent: 10,
-      inventoryQuantity: 25
-    },
-    {
-      id:1,
-      productName: "Staplomatic",
-      vendorName: "Office Co",
-      productPrice: 9.99,
-      salePercent: 25,
-      inventoryQuantity: 13
-    },
-    {
-      id:2,
-      productName: "tunes",
-      vendorName: "music co",
-      productPrice: 14.99,
-      salePercent: 35,
-      inventoryQuantity: 220
-    },
-  ])
+  const [dailyDealProducts, setDailyDealProducts] = useState([]);
+  useEffect(async ()=> {
+    const result = await api.getDeals();
+    if(result){
+      setDailyDealProducts(result.data);
+    }
+  }, [])
   return(
     <Layout>
       <Grid container>

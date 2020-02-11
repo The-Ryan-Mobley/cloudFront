@@ -7,3 +7,7 @@ html{
     border-width: 1px;
     padding: 10px;
 }
+.thumbIcon{
+    max-height: 8rem;
+    max-width: auto;
+}
