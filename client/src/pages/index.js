@@ -44,7 +44,7 @@ const IndexPage = () => {
           {dailyDealProducts.map(item => (
             <Grid item xs={4}>
               <FrontPageProduct key={item.id} productData={item}/>
-              </Grid>
+            </Grid>
           ))}
         </Grid>
 
