@@ -1,13 +1,5 @@
 [
-    {
-        "id":0,
-        "productName": "'The Topps' Premium Top Hat",
-        "productImageUrl": "https://drive.google.com/file/d/1QCROKiwd6gXZr7d_1WtISC5EpQ1d1bKu/view?usp=sharing",
-        "vendorName": "Dapper Co",
-        "productPrice": 29.99,
-        "salePercent": 10,
-        "inventoryQuantity": 25
-    },
+   
     {
         "id":1,
         "productName": "Plastic Globe",
