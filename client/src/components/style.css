@@ -8,6 +8,6 @@ html{
     padding: 10px;
 }
 .thumbIcon{
-    max-height: 8rem;
+    max-height: 100%;
     max-width: auto;
 }

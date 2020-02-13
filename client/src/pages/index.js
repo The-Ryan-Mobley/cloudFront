@@ -11,19 +11,23 @@ import FrontPageProduct from "../components/frontPageProduct";
 import api from "../utils/api";
 
 const IndexPage = () => {
-  // const [dailyDealProducts, setDailyDealProducts] = useState([]);
-  // useEffect(async ()=> {
-  //   const result = await api.getDeals();
-  //   if(result){
-  //     setDailyDealProducts(result.data);
-  //   }
-  // }, [])
+  const [dailyDealProducts, setDailyDealProducts] = useState([]);
+  useEffect(()=> {
+    async function queryDeals(){
+      const result = await api.getDeals();
+      if(result){
+        setDailyDealProducts(result.data);
+      }
+    }
+    queryDeals();
+    
+  }, []);
   return(
     <Layout>
       <Grid container>
         <SEO title="Home" />
         <h1>CLOUDFRONT</h1>
-        <ScrollerDex/>
+        {dailyDealProducts.length > 0 ? (<ScrollerDex products={dailyDealProducts}/>): (<p>Loading....</p>)}
 
         <Link to="/page-2/">Go to page 2</Link>
       </Grid>
