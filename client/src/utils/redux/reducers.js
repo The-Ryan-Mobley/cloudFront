@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import {USER_INPUT_CHANGE, USER_AUTHENTICATED_LOGIN_DATA} from "./actions";
+import {USER_INPUT_CHANGE, USER_AUTHENTICATED_LOGIN_DATA, SITE_SEARCH_INPUT} from "./actions";
 
 const userState = {
     userData: {
@@ -9,6 +9,11 @@ const userState = {
         email: "",
         confirmPassword: "",
         userId: "",
+    }
+}
+const siteControls = {
+    siteControls: {
+        searchTerms: ""
     }
 }
 const userManipulation = (state = userState, action) => {
@@ -40,9 +45,23 @@ const userManipulation = (state = userState, action) => {
     return state;
 
 }
+const siteVariableManipulation = (state = siteControls, action) => {
+    switch(action.type){
+        case SITE_SEARCH_INPUT: {
+            return{
+                ...state,
+                siteControls: {
+                    [action.name] : action.value
+                }
+            }
+        }
+        default: return state;
+    }
+}
 
 const appFunctions = combineReducers({
-    userManipulation
+    userManipulation,
+    siteVariableManipulation
 });
 
 export default appFunctions;

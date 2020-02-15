@@ -10,5 +10,8 @@ export default {
     },
     getDeals: () => {
         return axios.get("/api/products/deals");
+    },
+    searchForQueriedProducts: (queryString) => {
+        return axios.get("/api/products/search/?="+queryString);
     }
 }
