@@ -11,7 +11,11 @@ module.exports = {
             res.json(products);
         });
         
-        
+    },
+    searchQuery: async (req, res) => {
 
+    },
+    suggestedResult: async (req, res) => {
+        
     }
 }
