@@ -16,6 +16,15 @@ module.exports = {
 
     },
     suggestedResult: async (req, res) => {
-        
+        console.log("eyyy");
+        const queryText = req.params.inputValue.split(" ");
+        console.log(queryText);
+        //contains
+        inventory.where("productName", "array-contains-any", queryText).then(snapShot => {
+            snapShot.forEach(doc => {
+                console.log(doc.data);
+            })
+        })
+
     }
 }
